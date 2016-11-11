@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6C0C9BB7E6F3AAB1D21567FE454155D7AEA64104",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6C0C9BB7E6F3AAB1D21567FE454155D7AEA64104" : 9223372036854775807,
+    "4F55B6FA24E0F48A08C6DEB46AF62E36895F4AFB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B387F79C-DC86-4155-8AD2-B3ADDBE95097",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6C0C9BB7E6F3AAB1D21567FE454155D7AEA64104" : "Calendar\/",
+    "4F55B6FA24E0F48A08C6DEB46AF62E36895F4AFB" : "TechniqueTree\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Calendar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Calendar\/Calendar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/huangmubin\/TechniqueTree.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4F55B6FA24E0F48A08C6DEB46AF62E36895F4AFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/huangmubin\/Calendar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C0C9BB7E6F3AAB1D21567FE454155D7AEA64104"
+    }
+  ]
+}
