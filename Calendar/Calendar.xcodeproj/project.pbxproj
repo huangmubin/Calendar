@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CAC0FAA1DD6C81900D2FB94 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */; };
 		B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4361DD573E00057AE2E /* AppDelegate.swift */; };
 		B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4381DD573E00057AE2E /* ViewController.swift */; };
 		B14DA43C1DD573E00057AE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA43A1DD573E00057AE2E /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		B14DA4331DD573E00057AE2E /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4361DD573E00057AE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14DA4381DD573E00057AE2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B14DA4671DD573E80057AE2E /* App Infos */,
 				B14DA4381DD573E00057AE2E /* ViewController.swift */,
 				B19124BE1DD5B80100D04049 /* CalendarInfos.swift */,
+				9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */,
 				B14DA43A1DD573E00057AE2E /* Main.storyboard */,
 			);
 			path = Calendar;
@@ -287,6 +290,7 @@
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
 				B14DA43F1DD573E00057AE2E /* Calendar.xcdatamodeld in Sources */,
 				B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */,
+				9CAC0FAA1DD6C81900D2FB94 /* ScrollView.swift in Sources */,
 				B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
