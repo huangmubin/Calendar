@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CAC0FAA1DD6C81900D2FB94 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */; };
 		B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4361DD573E00057AE2E /* AppDelegate.swift */; };
 		B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4381DD573E00057AE2E /* ViewController.swift */; };
 		B14DA43C1DD573E00057AE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA43A1DD573E00057AE2E /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		B14DA4441DD573E00057AE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA4421DD573E00057AE2E /* LaunchScreen.storyboard */; };
 		B14DA44F1DD573E00057AE2E /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA44E1DD573E00057AE2E /* CalendarTests.swift */; };
 		B14DA45A1DD573E00057AE2E /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4591DD573E00057AE2E /* CalendarUITests.swift */; };
+		B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */; };
 		B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19124BE1DD5B80100D04049 /* CalendarInfos.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		B14DA4331DD573E00057AE2E /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4361DD573E00057AE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14DA4381DD573E00057AE2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		B14DA4551DD573E00057AE2E /* CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4591DD573E00057AE2E /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		B14DA45B1DD573E00057AE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopCollectionView.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/LoopCollectionView.swift; sourceTree = "<group>"; };
 		B19124BE1DD5B80100D04049 /* CalendarInfos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarInfos.swift; path = ../../../TechniqueTree/Codes/Library/CalendarInfos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 				B14DA4671DD573E80057AE2E /* App Infos */,
 				B14DA4381DD573E00057AE2E /* ViewController.swift */,
 				B19124BE1DD5B80100D04049 /* CalendarInfos.swift */,
-				9CAC0FA91DD6C81900D2FB94 /* ScrollView.swift */,
+				B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */,
 				B14DA43A1DD573E00057AE2E /* Main.storyboard */,
 			);
 			path = Calendar;
@@ -287,10 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */,
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
 				B14DA43F1DD573E00057AE2E /* Calendar.xcdatamodeld in Sources */,
 				B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */,
-				9CAC0FAA1DD6C81900D2FB94 /* ScrollView.swift in Sources */,
 				B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = Calendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.Calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = Calendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.Calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
