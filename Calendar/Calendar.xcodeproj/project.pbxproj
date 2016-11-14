@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1CE3761DD9D1000021DD19 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CE3751DD9D1000021DD19 /* DayView.swift */; };
 		B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4361DD573E00057AE2E /* AppDelegate.swift */; };
 		B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4381DD573E00057AE2E /* ViewController.swift */; };
 		B14DA43C1DD573E00057AE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA43A1DD573E00057AE2E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C1CE3751DD9D1000021DD19 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		B14DA4331DD573E00057AE2E /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4361DD573E00057AE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14DA4381DD573E00057AE2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,10 +107,11 @@
 			children = (
 				B14DA4681DD573FE0057AE2E /* AppDelegate */,
 				B14DA4671DD573E80057AE2E /* App Infos */,
+				B14DA43A1DD573E00057AE2E /* Main.storyboard */,
+				9C1CE3751DD9D1000021DD19 /* DayView.swift */,
 				B14DA4381DD573E00057AE2E /* ViewController.swift */,
 				B19124BE1DD5B80100D04049 /* CalendarInfos.swift */,
 				B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */,
-				B14DA43A1DD573E00057AE2E /* Main.storyboard */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */,
+				9C1CE3761DD9D1000021DD19 /* DayView.swift in Sources */,
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
 				B14DA43F1DD573E00057AE2E /* Calendar.xcdatamodeld in Sources */,
 				B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */,
@@ -474,6 +478,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = CalendarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.CalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +494,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = CalendarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.CalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +509,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = CalendarUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.CalendarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +524,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W6XAGW63EX;
 				INFOPLIST_FILE = CalendarUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Myron.CalendarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
