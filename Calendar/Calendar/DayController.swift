@@ -10,109 +10,37 @@ import UIKit
 
 class DayController: UIViewController {
     
+    
     // MARK: - Loop week view
     
     @IBOutlet weak var weekView: WeekView!
     
-    func updateWeekViewCurrentDate() {
-        weekView.updateCurrent(date: Model.default.calendar.firstTimeInDay()!)
-    }
+    // MARK: - Day View Loop
     
-    // MARK: - Day View
-    
-    @IBOutlet weak var dayView: DayView!
-    @IBOutlet weak var dayViewPre: DayView!
-    @IBOutlet weak var dayViewNext: DayView!
-    
-    func updateDayView() {
-        dayView.update(0)
-        dayViewPre.update(-1)
-        dayViewNext.update(1)
-    }
+    @IBOutlet weak var dayViews: DayViewLoop!
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateDayView()
-        
         weekView.delegate = self
         weekView.current = Model.default.calendar.firstTimeInDay()!
         weekView.deployLoop(origin: Model.default.calendar.firstDayInWeek()!)
+        
+        dayViews.delegate = self
+        dayViews.update()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        dayViews.timer(start: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        dayViews.timer(start: false)
     }
     
-    // MARK: - Move Gesture
-    
-    @IBOutlet weak var dayViewLayout: NSLayoutConstraint!
-    @IBAction func dayViewPanAction(_ sender: UIPanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            break
-        case .changed:
-            dayViewLayout.constant = sender.translation(in: view).x
-        case .ended:
-            let velocity = sender.velocity(in: view).x
-            /** Previous Day View **/
-            
-            if dayViewLayout.constant > centerX || velocity > 1000 {
-                previousAnimation()
-                return
-            }
-            
-            /** Next Day View **/
-            
-            if dayViewLayout.constant < -centerX || velocity < -1000 {
-                nextAnimation()
-                return
-            }
-            
-            /** Center Day View **/
-            fallthrough
-        default:
-            centerAnimation()
-        }
-    }
-    
-    // MARK: Animations
-    
-    private func previousAnimation() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dayViewLayout.constant = self.view.bounds.width
-            self.view.layoutIfNeeded()
-        }, completion: { (finish) in
-            Model.default.offsetDay(days: -1)
-            self.updateWeekViewCurrentDate()
-            self.updateDayView()
-            self.dayViewLayout.constant = 0
-            self.view.layoutIfNeeded()
-        })
-    }
-    private func nextAnimation() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.dayViewLayout.constant = -self.view.bounds.width
-            self.view.layoutIfNeeded()
-        }, completion: { (finish) in
-            Model.default.offsetDay(days: 1)
-            self.updateWeekViewCurrentDate()
-            self.updateDayView()
-            self.dayViewLayout.constant = 0
-            self.view.layoutIfNeeded()
-        })
-    }
-    private func centerAnimation() {
-        UIView.animate(withDuration: 0.2) {
-            self.dayViewLayout.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    }
     
 }
 
@@ -122,7 +50,17 @@ extension DayController: WeekViewDelegate {
     
     func weekView(selected day: Date) {
         Model.default.offsetDay(date: day)
-        self.updateDayView()
+        dayViews.update()
+    }
+    
+}
+
+// MARK: - Day View Loop Delegate
+
+extension DayController: DayViewLoopDelegate {
+    
+    func dayViewLoop(offsetView to: Int) {
+        weekView.updateCurrent(date: Model.default.calendar.firstTimeInDay()!)
     }
     
 }

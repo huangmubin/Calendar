@@ -9,11 +9,38 @@
 import UIKit
 
 class DayView: UIView {
-
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var chineseLabel: UILabel!
+    
+    @IBOutlet weak var dayLabel: UILabel! {
+        didSet {
+            dayLabel.layer.shadowOpacity = 0.3
+            dayLabel.layer.shadowRadius = 2
+            dayLabel.layer.shadowColor = UIColor.black.cgColor
+            dayLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
+        }
+    }
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.layer.shadowOpacity = 0.2
+            dateLabel.layer.shadowRadius = 2
+            dateLabel.layer.shadowColor = UIColor.black.cgColor
+            dateLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
+        }
+    }
+    @IBOutlet weak var chineseLabel: UILabel! {
+        didSet {
+            chineseLabel.layer.shadowOpacity = 0.2
+            chineseLabel.layer.shadowRadius = 2
+            chineseLabel.layer.shadowColor = UIColor.black.cgColor
+            chineseLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
+        }
+    }
+    
+    func deploy() {
+        dayLabel.layer.shadowOpacity = 1
+        dayLabel.layer.shadowRadius = 2
+        dayLabel.layer.shadowColor = UIColor.black.cgColor
+        dayLabel.layer.shadowOffset = CGSize(width: 0, height: -2)
+    }
     
     func update(_ offsetTo: Int) {
         let offset = Double(offsetTo) * 86400

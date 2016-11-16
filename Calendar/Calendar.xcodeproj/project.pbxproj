@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C1CE3761DD9D1000021DD19 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CE3751DD9D1000021DD19 /* DayView.swift */; };
+		9CB573EF1DDC82DD00D23D6A /* DayViewLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */; };
 		B12A99391DDBFE02001486AF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A99381DDBFE02001486AF /* Model.swift */; };
 		B12A993C1DDC088A001486AF /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A993B1DDC088A001486AF /* UIKitExtensions.swift */; };
 		B12A993E1DDC09CD001486AF /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A993D1DDC09CD001486AF /* WeekView.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		9C1CE3751DD9D1000021DD19 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewLoop.swift; sourceTree = "<group>"; };
 		B12A99381DDBFE02001486AF /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B12A993B1DDC088A001486AF /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/UIKitExtensions.swift; sourceTree = "<group>"; };
 		B12A993D1DDC09CD001486AF /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EAF0F51DDB09B300E60517 /* DayController.swift */,
+				9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */,
 				9C1CE3751DD9D1000021DD19 /* DayView.swift */,
 				B12A993D1DDC09CD001486AF /* WeekView.swift */,
 				B12A993F1DDC0CD9001486AF /* WeekLoopCell.swift */,
@@ -346,6 +349,7 @@
 				B12A99401DDC0CD9001486AF /* WeekLoopCell.swift in Sources */,
 				B12A993E1DDC09CD001486AF /* WeekView.swift in Sources */,
 				B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */,
+				9CB573EF1DDC82DD00D23D6A /* DayViewLoop.swift in Sources */,
 				B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */,
 				B1EAF0F41DDB03CB00E60517 /* Layouter.swift in Sources */,
 			);

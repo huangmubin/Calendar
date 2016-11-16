@@ -12,7 +12,8 @@ class WeekLoopCell: LoopCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backView.layer.cornerRadius = backView.bounds.width / 2
+        backView.backgroundColor = UIColor.clear
+        backView.layer.cornerRadius = 20
     }
     
     // MARK: Property

@@ -8,9 +8,13 @@
 
 import UIKit
 
+// MARK: Week View Delegate
+
 protocol WeekViewDelegate: NSObjectProtocol {
     func weekView(selected day: Date)
 }
+
+// MARK: Week View
 
 class WeekView: UIView {
 
@@ -52,6 +56,12 @@ class WeekView: UIView {
             let offset = select / 7 * 7
             loopWeek.scrollToOffset(offset: offset, animated: true)
         }
+    }
+    
+    // MARK: - Calendar Change
+    
+    @IBAction func calendarChanged(_ sender: UIButton) {
+        
     }
 }
 
