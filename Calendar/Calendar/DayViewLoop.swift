@@ -103,13 +103,13 @@ class DayViewLoop: UIView {
         UIView.animate(withDuration: 0.3, animations: {
             self.centerViewLayout.constant = self.bounds.width
             self.layoutIfNeeded()
-            }, completion: { (finish) in
-                Model.default.offsetDay(days: -1)
-                self.update()
-                self.centerViewLayout.constant = 0
-                self.layoutIfNeeded()
-                
-                self.delegate?.dayViewLoop(offsetView: -1)
+        }, completion: { (finish) in
+            Model.default.offsetDay(days: -1)
+            self.update()
+            self.centerViewLayout.constant = 0
+            self.layoutIfNeeded()
+            
+            self.delegate?.dayViewLoop(offsetView: -1)
         })
     }
     

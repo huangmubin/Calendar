@@ -124,7 +124,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="WeekLoopCell"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="origin">
-                                                <integer key="value" value="3500"/>
+                                                <integer key="value" value="350"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </collectionView>

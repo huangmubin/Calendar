@@ -31,10 +31,13 @@ class WeekView: UIView {
     var current = Date()
     var selectSection = 0
     var todaySection = 0
+    var weekSection = 0
     
     func deployLoop(origin: Date) {
         self.origin = origin
         selectSection = Int((current.timeIntervalSince1970 - origin.timeIntervalSince1970) / 86400)
+        weekSection = selectSection
+        
         size = CGSize(width: UIScreen.main.bounds.width / 7, height: 40)
         loopWeek.initDeploy(delegate: self)
         
@@ -56,6 +59,9 @@ class WeekView: UIView {
             let offset = select / 7 * 7
             loopWeek.scrollToOffset(offset: offset, animated: true)
         }
+        
+        self.weekSection = selectSection - self.loopWeek.firstVisibleItem!.section
+        self.weekSection = (self.weekSection + 7) % 7
     }
     
     // MARK: - Calendar Change
@@ -121,6 +127,18 @@ extension WeekView: LoopCollectionViewDelegate {
         self.selectSection = section
         updateCellSelect()
         self.current = self.origin.addingTimeInterval(Double(section) * 86400)
+        delegate?.weekView(selected: self.current)
+        self.weekSection = section - self.loopWeek.firstVisibleItem!.section
+    }
+    
+    // MARK: Scroll
+    
+    func loopCollection(loopView: LoopCollectionView, didEndScrollingAnimation inSection: Int) {
+        let cell = self.loopWeek.visibleItems[weekSection] as! WeekLoopCell
+        cell.select = true
+        cell.update()
+        
+        self.current = self.origin.addingTimeInterval(Double(cell.section) * 86400)
         delegate?.weekView(selected: self.current)
     }
 }
