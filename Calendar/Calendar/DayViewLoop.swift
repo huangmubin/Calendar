@@ -31,27 +31,27 @@ class DayViewLoop: UIView {
             timerLabel.layer.shadowColor = UIColor.black.cgColor
             timerLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
             
-            format.dateFormat = "HH : mm"
-            timer.setEventHandler() {
-                let new = self.format.string(from: Date())
-                if new != self.timerLabel.text {
-                    DispatchQueue.main.async {
-                        self.timerLabel.text = new
-                    }
-                }
-            }
-            timer.resume()
+//            format.dateFormat = "HH : mm"
+//            timer.setEventHandler() {
+//                let new = self.format.string(from: Date())
+//                if new != self.timerLabel.text {
+//                    DispatchQueue.main.async {
+//                        self.timerLabel.text = new
+//                    }
+//                }
+//            }
+//            timer.resume()
         }
     }
     private var timer: DispatchSourceTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
     private var format = DateFormatter()
     
     func timer(start: Bool) {
-        if start {
-            timer.resume()
-        } else {
-            timer.suspend()
-        }
+//        if start {
+//            timer.resume()
+//        } else {
+//            timer.suspend()
+//        }
     }
     
     // MARK: - Day Views

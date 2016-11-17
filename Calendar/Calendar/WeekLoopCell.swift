@@ -36,10 +36,10 @@ class WeekLoopCell: LoopCollectionViewCell {
             dayLabel.textColor = UIColor.white
             chineseDayLabel.textColor = UIColor.white
         case (true, _, false):  // 选中，但不是今天
-            backView.layer.backgroundColor = UIColor.black.cgColor
+            backView.layer.backgroundColor = UIColor.white.cgColor
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            dayLabel.textColor = UIColor.white
-            chineseDayLabel.textColor = UIColor.white
+            dayLabel.textColor = UIColor.black
+            chineseDayLabel.textColor = UIColor.black
         case (_, _, true):      // 没选中，并且是今天
             backView.layer.backgroundColor = UIColor.clear.cgColor
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
@@ -53,8 +53,8 @@ class WeekLoopCell: LoopCollectionViewCell {
         default:                // 没选中，不是今天，而且不是周末
             backView.layer.backgroundColor = UIColor.clear.cgColor
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-            dayLabel.textColor = UIColor.black
-            chineseDayLabel.textColor = UIColor.black
+            dayLabel.textColor = UIColor.white
+            chineseDayLabel.textColor = UIColor.white
         }
     }
     

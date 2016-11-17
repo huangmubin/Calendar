@@ -34,6 +34,7 @@ class DayController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         dayViews.timer(start: true)
+        updateColor()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -41,6 +42,23 @@ class DayController: UIViewController {
         dayViews.timer(start: false)
     }
     
+}
+
+// MARK: - Back View
+
+extension DayController {
+    
+    
+    func updateColor(inTime time: Date = Date()) {
+        let hour = CGFloat((CalendarInfo(date: time).hour + 6) % 24) / 24
+        print("update Color hour \(CalendarInfo(date: time).hour) \(hour)")
+        // 15 20 45  160 185 250
+        // 145 165 205
+        func float(_ start: CGFloat, _ full: CGFloat) -> CGFloat {
+            return (start + full * hour) / 255.0
+        }
+        view.backgroundColor = UIColor(red: float(15, 145), green: float(20, 165), blue: float(45, 205), alpha: 1)
+    }
     
 }
 
