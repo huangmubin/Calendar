@@ -30,28 +30,31 @@ class DayViewLoop: UIView {
             timerLabel.layer.shadowRadius = 2
             timerLabel.layer.shadowColor = UIColor.black.cgColor
             timerLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
-            
-//            format.dateFormat = "HH : mm"
-//            timer.setEventHandler() {
-//                let new = self.format.string(from: Date())
-//                if new != self.timerLabel.text {
-//                    DispatchQueue.main.async {
-//                        self.timerLabel.text = new
-//                    }
-//                }
-//            }
-//            timer.resume()
+            format.dateFormat = "HH : mm"
+            timerLabel.text = self.format.string(from: Date())
         }
     }
-    private var timer: DispatchSourceTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
+    private var timer: DispatchSourceTimer!
     private var format = DateFormatter()
     
     func timer(start: Bool) {
-//        if start {
-//            timer.resume()
-//        } else {
-//            timer.suspend()
-//        }
+        if start {
+            timerLabel.text = self.format.string(from: Date())
+            DispatchQueue.global().async {
+                let date = 60 - CalendarInfo().second
+                Thread.sleep(forTimeInterval: TimeInterval(date))
+                self.timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags.init(rawValue: 1), queue: DispatchQueue.main)
+                self.timer?.scheduleRepeating(wallDeadline: DispatchWallTime.now(), interval: DispatchTimeInterval.seconds(60))
+                self.timer?.setEventHandler(handler: {
+                    DispatchQueue.main.async {
+                        self.timerLabel.text = self.format.string(from: Date())
+                    }
+                })
+                self.timer?.resume()
+            }
+        } else {
+            timer?.suspend()
+        }
     }
     
     // MARK: - Day Views

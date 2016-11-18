@@ -29,12 +29,20 @@ class DayController: UIViewController {
         
         dayViews.delegate = self
         dayViews.update()
+        
+        updateColor()
+        NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: .main) { _ in
+            self.updateColor()
+            self.dayViews.timer(start: true)
+        }
+        NotificationCenter.default.addObserver(forName: .UIApplicationWillResignActive, object: nil, queue: .main) { _ in
+            self.dayViews.timer(start: false)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         dayViews.timer(start: true)
-        updateColor()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -50,14 +58,14 @@ extension DayController {
     
     
     func updateColor(inTime time: Date = Date()) {
-        let hour = CGFloat((CalendarInfo(date: time).hour + 6) % 24) / 24
-        print("update Color hour \(CalendarInfo(date: time).hour) \(hour)")
-        // 15 20 45  160 185 250
-        // 145 165 205
-        func float(_ start: CGFloat, _ full: CGFloat) -> CGFloat {
-            return (start + full * hour) / 255.0
+        switch CalendarInfo(date: time).hour {
+        case 0 ..< 5, 19 ..< 24:
+            view.backgroundColor = Colors.night
+        case 5 ..< 7, 17 ..< 19:
+            view.backgroundColor = Colors.dusk
+        default:
+            view.backgroundColor = Colors.day
         }
-        view.backgroundColor = UIColor(red: float(15, 145), green: float(20, 165), blue: float(45, 205), alpha: 1)
     }
     
 }

@@ -31,30 +31,45 @@ class WeekLoopCell: LoopCollectionViewCell {
     func update() {
         switch (select, light, today) {
         case (true, _, true):   // 选中，并且是今天
-            backView.layer.backgroundColor = UIColor.red.cgColor
+            backView.layer.backgroundColor = Colors.red.cgColor
+            
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            dayLabel.textColor = UIColor.white
-            chineseDayLabel.textColor = UIColor.white
+            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+            
+            dayLabel.textColor = Colors.white
+            chineseDayLabel.textColor = Colors.white
         case (true, _, false):  // 选中，但不是今天
-            backView.layer.backgroundColor = UIColor.white.cgColor
+            backView.layer.backgroundColor = Colors.white.cgColor
+            
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            dayLabel.textColor = UIColor.black
-            chineseDayLabel.textColor = UIColor.black
+            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+            
+            dayLabel.textColor = Colors.black
+            chineseDayLabel.textColor = Colors.black
         case (_, _, true):      // 没选中，并且是今天
             backView.layer.backgroundColor = UIColor.clear.cgColor
+            
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
+            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+            
             dayLabel.textColor = UIColor.red
             chineseDayLabel.textColor = UIColor.red
-        case (_, true, _):      // 没选中，而且不是今天，但是是周末
+//        case (_, true, _):      // 没选中，而且不是今天，但是是周末
+//            backView.layer.backgroundColor = UIColor.clear.cgColor
+//            
+//            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
+//            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+//            
+//            dayLabel.textColor = UIColor.lightGray
+//            chineseDayLabel.textColor = UIColor.lightGray
+        default:                // 没选中，不是今天
             backView.layer.backgroundColor = UIColor.clear.cgColor
+            
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-            dayLabel.textColor = UIColor.lightGray
-            chineseDayLabel.textColor = UIColor.lightGray
-        default:                // 没选中，不是今天，而且不是周末
-            backView.layer.backgroundColor = UIColor.clear.cgColor
-            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-            dayLabel.textColor = UIColor.white
-            chineseDayLabel.textColor = UIColor.white
+            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+            
+            dayLabel.textColor = Colors.white
+            chineseDayLabel.textColor = Colors.white
         }
     }
     
