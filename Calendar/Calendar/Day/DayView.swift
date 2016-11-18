@@ -35,20 +35,20 @@ class DayView: UIView {
         }
     }
     
-    func deploy() {
-        dayLabel.layer.shadowOpacity = 1
-        dayLabel.layer.shadowRadius = 2
-        dayLabel.layer.shadowColor = UIColor.black.cgColor
-        dayLabel.layer.shadowOffset = CGSize(width: 0, height: -2)
-    }
+    var isPackUp: Bool = false
     
-    func update(_ offsetTo: Int) {
-        let offset = Double(offsetTo) * 86400
-        let calendar = Model.default.calendar.offset(time: offset)
-        let chinese  = Model.default.chinese.offset(time: offset)
+    func update(date: Date) {
+        let calendar = CalendarInfo(date: date)
+        let chinese  = CalendarInfo(identifier: Calendar.Identifier.chinese, date: date)
         dayLabel.text = "\(calendar.day)"
         dateLabel.text = "\(calendar.year) 年 \(calendar.month) 月"
         chineseLabel.text = "\(chinese.chineseYear)\(chinese.chineseZodiac)年\(chinese.chineseMonth)\(chinese.chineseDay)"
+        
+        if isPackUp {
+            dateLabel.text = "\(dateLabel.text!) \(calendar.day)"
+            dayLabel.alpha = 0
+        }
     }
+    
     
 }

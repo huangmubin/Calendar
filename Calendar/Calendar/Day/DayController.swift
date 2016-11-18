@@ -17,6 +17,7 @@ class DayController: UIViewController {
     // MARK: - Day View Loop
     
     @IBOutlet weak var dayViews: DayViewLoop!
+    @IBOutlet weak var dayBottomLayout: NSLayoutConstraint!
     
     // MARK: - Life cycle
     
@@ -27,7 +28,7 @@ class DayController: UIViewController {
         weekView.deployLoop(origin: Model.default.calendar.firstDayInWeek()!)
         
         dayViews.delegate = self
-        dayViews.update()
+        dayViews.update(date: Model.default.calendar.date)
         
         updateColor()
         NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: .main) { _ in
@@ -48,6 +49,8 @@ class DayController: UIViewController {
         super.viewDidDisappear(animated)
         dayViews.timer(start: false)
     }
+    
+    
     
 }
 
@@ -74,7 +77,7 @@ extension DayController: WeekViewDelegate {
     
     func weekView(selected day: Date) {
         Model.default.offsetDay(date: day)
-        dayViews.update()
+        dayViews.update(date: Model.default.calendar.date)
     }
     
 }
@@ -83,8 +86,40 @@ extension DayController: WeekViewDelegate {
 
 extension DayController: DayViewLoopDelegate {
     
-    func dayViewLoop(offsetView to: Int) {
+    func dayViewLoop(offsetView to: Int) -> Date {
+        Model.default.offsetDay(days: to)
         weekView.updateCurrent(date: Model.default.calendar.firstTimeInDay()!)
+        return Model.default.calendar.date
+    }
+    
+    func dayViewLoop(packUp: Bool) -> Date {
+        return Model.default.calendar.date
+    }
+    
+    func dayViewLoop(checkUp: Bool) -> (Int, Int) {
+        return (0, 0)
+    }
+    
+}
+
+// MARK: - Animation
+
+extension DayController {
+    
+    @IBAction func dayViewPackUpAction(_ sender: UIButton) {
+        let packUp = self.dayBottomLayout.constant == 0
+        if !packUp {
+            self.dayViews.dayViews(packUp: packUp, inDate: Model.default.calendar.date)
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.dayBottomLayout.constant = packUp ? self.dayViews.bounds.height - 70 : 0
+            self.dayViews.centerView.dayLabel.alpha = packUp ? 0 : 1
+            self.view.layoutIfNeeded()
+            }, completion: { _ in
+                if packUp {
+                    self.dayViews.dayViews(packUp: packUp, inDate: Model.default.calendar.date)
+                }
+        })
     }
     
 }

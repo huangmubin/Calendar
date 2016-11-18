@@ -186,10 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				B1F7ED011DDE9E05006FE2C5 /* DayController.swift */,
-				B1F7ED021DDE9E05006FE2C5 /* DayView.swift */,
 				B1F7ED031DDE9E05006FE2C5 /* DayViewLoop.swift */,
-				B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */,
+				B1F7ED021DDE9E05006FE2C5 /* DayView.swift */,
 				B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */,
+				B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";

@@ -11,7 +11,9 @@ import UIKit
 // MARK: - Day View Loop Delegate Protocol
 
 protocol DayViewLoopDelegate: NSObjectProtocol {
-    func dayViewLoop(offsetView to: Int)
+    func dayViewLoop(offsetView to: Int) -> Date
+    func dayViewLoop(packUp: Bool) -> Date
+    func dayViewLoop(checkUp: Bool) -> (Int, Int)
 }
 
 // MARK: - Day View Loop
@@ -63,10 +65,10 @@ class DayViewLoop: UIView {
     @IBOutlet weak var previousView: DayView!
     @IBOutlet weak var nextView: DayView!
     
-    func update() {
-        centerView.update(0)
-        previousView.update(-1)
-        nextView.update(1)
+    func update(date: Date) {
+        centerView.update(date: date)
+        previousView.update(date: date.addingTimeInterval(-86400))
+        nextView.update(date: date.addingTimeInterval(86400))
     }
     
     // MARK: - Pan Gesture Action
@@ -107,12 +109,11 @@ class DayViewLoop: UIView {
             self.centerViewLayout.constant = self.bounds.width
             self.layoutIfNeeded()
         }, completion: { (finish) in
-            Model.default.offsetDay(days: -1)
-            self.update()
+            if let date = self.delegate?.dayViewLoop(offsetView: -1) {
+                self.update(date: date)
+            }
             self.centerViewLayout.constant = 0
             self.layoutIfNeeded()
-            
-            self.delegate?.dayViewLoop(offsetView: -1)
         })
     }
     
@@ -121,12 +122,11 @@ class DayViewLoop: UIView {
             self.centerViewLayout.constant = -self.bounds.width
             self.layoutIfNeeded()
             }, completion: { (finish) in
-                Model.default.offsetDay(days: 1)
-                self.update()
+                if let date = self.delegate?.dayViewLoop(offsetView: 1) {
+                    self.update(date: date)
+                }
                 self.centerViewLayout.constant = 0
                 self.layoutIfNeeded()
-                
-                self.delegate?.dayViewLoop(offsetView: 1)
         })
     }
     
@@ -135,6 +135,15 @@ class DayViewLoop: UIView {
             self.centerViewLayout.constant = 0
             self.layoutIfNeeded()
         }
+    }
+    
+    // MARK: - Move
+    
+    func dayViews(packUp: Bool, inDate date: Date) {
+        self.centerView.isPackUp = packUp
+        self.previousView.isPackUp = packUp
+        self.nextView.isPackUp = packUp
+        self.update(date: date)
     }
     
 }
