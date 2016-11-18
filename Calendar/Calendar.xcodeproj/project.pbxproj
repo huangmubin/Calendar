@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C1CE3761DD9D1000021DD19 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CE3751DD9D1000021DD19 /* DayView.swift */; };
-		9CB573EF1DDC82DD00D23D6A /* DayViewLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */; };
-		B12A99391DDBFE02001486AF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A99381DDBFE02001486AF /* Model.swift */; };
 		B12A993C1DDC088A001486AF /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A993B1DDC088A001486AF /* UIKitExtensions.swift */; };
-		B12A993E1DDC09CD001486AF /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A993D1DDC09CD001486AF /* WeekView.swift */; };
-		B12A99401DDC0CD9001486AF /* WeekLoopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A993F1DDC0CD9001486AF /* WeekLoopCell.swift */; };
-		B12A99421DDC42F9001486AF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A99411DDC42F8001486AF /* Images.swift */; };
 		B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4361DD573E00057AE2E /* AppDelegate.swift */; };
 		B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4381DD573E00057AE2E /* ViewController.swift */; };
 		B14DA43C1DD573E00057AE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA43A1DD573E00057AE2E /* Main.storyboard */; };
@@ -25,8 +19,14 @@
 		B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */; };
 		B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19124BE1DD5B80100D04049 /* CalendarInfos.swift */; };
 		B1EAF0F41DDB03CB00E60517 /* Layouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0F31DDB03CB00E60517 /* Layouter.swift */; };
-		B1EAF0F61DDB09B300E60517 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0F51DDB09B300E60517 /* DayController.swift */; };
-		B1F7ECFF1DDE90CE006FE2C5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ECFE1DDE90CE006FE2C5 /* Colors.swift */; };
+		B1F7ED0A1DDE9E05006FE2C5 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED011DDE9E05006FE2C5 /* DayController.swift */; };
+		B1F7ED0B1DDE9E05006FE2C5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED021DDE9E05006FE2C5 /* DayView.swift */; };
+		B1F7ED0C1DDE9E05006FE2C5 /* DayViewLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED031DDE9E05006FE2C5 /* DayViewLoop.swift */; };
+		B1F7ED0D1DDE9E05006FE2C5 /* WeekLoopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */; };
+		B1F7ED0E1DDE9E05006FE2C5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */; };
+		B1F7ED0F1DDE9E05006FE2C5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED071DDE9E05006FE2C5 /* Colors.swift */; };
+		B1F7ED101DDE9E05006FE2C5 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED081DDE9E05006FE2C5 /* Images.swift */; };
+		B1F7ED111DDE9E05006FE2C5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED091DDE9E05006FE2C5 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C1CE3751DD9D1000021DD19 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-		9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewLoop.swift; sourceTree = "<group>"; };
-		B12A99381DDBFE02001486AF /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B12A993B1DDC088A001486AF /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/UIKitExtensions.swift; sourceTree = "<group>"; };
-		B12A993D1DDC09CD001486AF /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
-		B12A993F1DDC0CD9001486AF /* WeekLoopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekLoopCell.swift; sourceTree = "<group>"; };
-		B12A99411DDC42F8001486AF /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		B14DA4331DD573E00057AE2E /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4361DD573E00057AE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14DA4381DD573E00057AE2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +65,14 @@
 		B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopCollectionView.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/LoopCollectionView.swift; sourceTree = "<group>"; };
 		B19124BE1DD5B80100D04049 /* CalendarInfos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarInfos.swift; path = ../../../TechniqueTree/Codes/Library/CalendarInfos.swift; sourceTree = "<group>"; };
 		B1EAF0F31DDB03CB00E60517 /* Layouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layouter.swift; path = ../../../TechniqueTree/Codes/Library/Layouter.swift; sourceTree = "<group>"; };
-		B1EAF0F51DDB09B300E60517 /* DayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
-		B1F7ECFE1DDE90CE006FE2C5 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B1F7ED011DDE9E05006FE2C5 /* DayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
+		B1F7ED021DDE9E05006FE2C5 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		B1F7ED031DDE9E05006FE2C5 /* DayViewLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewLoop.swift; sourceTree = "<group>"; };
+		B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekLoopCell.swift; sourceTree = "<group>"; };
+		B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		B1F7ED071DDE9E05006FE2C5 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B1F7ED081DDE9E05006FE2C5 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		B1F7ED091DDE9E05006FE2C5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,16 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B12A993A1DDBFE16001486AF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B12A99381DDBFE02001486AF /* Model.swift */,
-				B12A99411DDC42F8001486AF /* Images.swift */,
-				B1F7ECFE1DDE90CE006FE2C5 /* Colors.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		B14DA42A1DD573E00057AE2E = {
 			isa = PBXGroup;
 			children = (
@@ -134,11 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				B14DA43A1DD573E00057AE2E /* Main.storyboard */,
-				B1EAF0F21DDB039A00E60517 /* MyronCode */,
 				B14DA4681DD573FE0057AE2E /* AppDelegate */,
 				B14DA4671DD573E80057AE2E /* App Infos */,
-				B12A993A1DDBFE16001486AF /* Model */,
-				B1EAF0F71DDB09BC00E60517 /* Day */,
+				B1EAF0F21DDB039A00E60517 /* MyronCode */,
+				B1F7ED001DDE9E05006FE2C5 /* Day */,
+				B1F7ED061DDE9E05006FE2C5 /* Models */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -192,16 +182,26 @@
 			name = MyronCode;
 			sourceTree = "<group>";
 		};
-		B1EAF0F71DDB09BC00E60517 /* Day */ = {
+		B1F7ED001DDE9E05006FE2C5 /* Day */ = {
 			isa = PBXGroup;
 			children = (
-				B1EAF0F51DDB09B300E60517 /* DayController.swift */,
-				9CB573EE1DDC82DD00D23D6A /* DayViewLoop.swift */,
-				9C1CE3751DD9D1000021DD19 /* DayView.swift */,
-				B12A993D1DDC09CD001486AF /* WeekView.swift */,
-				B12A993F1DDC0CD9001486AF /* WeekLoopCell.swift */,
+				B1F7ED011DDE9E05006FE2C5 /* DayController.swift */,
+				B1F7ED021DDE9E05006FE2C5 /* DayView.swift */,
+				B1F7ED031DDE9E05006FE2C5 /* DayViewLoop.swift */,
+				B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */,
+				B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */,
 			);
-			name = Day;
+			path = Day;
+			sourceTree = "<group>";
+		};
+		B1F7ED061DDE9E05006FE2C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1F7ED071DDE9E05006FE2C5 /* Colors.swift */,
+				B1F7ED081DDE9E05006FE2C5 /* Images.swift */,
+				B1F7ED091DDE9E05006FE2C5 /* Model.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,19 +341,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12A99391DDBFE02001486AF /* Model.swift in Sources */,
-				B1F7ECFF1DDE90CE006FE2C5 /* Colors.swift in Sources */,
-				B1EAF0F61DDB09B300E60517 /* DayController.swift in Sources */,
+				B1F7ED111DDE9E05006FE2C5 /* Model.swift in Sources */,
+				B1F7ED0E1DDE9E05006FE2C5 /* WeekView.swift in Sources */,
+				B1F7ED0A1DDE9E05006FE2C5 /* DayController.swift in Sources */,
 				B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */,
-				9C1CE3761DD9D1000021DD19 /* DayView.swift in Sources */,
-				B12A99421DDC42F9001486AF /* Images.swift in Sources */,
 				B12A993C1DDC088A001486AF /* UIKitExtensions.swift in Sources */,
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
+				B1F7ED0B1DDE9E05006FE2C5 /* DayView.swift in Sources */,
+				B1F7ED0C1DDE9E05006FE2C5 /* DayViewLoop.swift in Sources */,
+				B1F7ED101DDE9E05006FE2C5 /* Images.swift in Sources */,
+				B1F7ED0D1DDE9E05006FE2C5 /* WeekLoopCell.swift in Sources */,
+				B1F7ED0F1DDE9E05006FE2C5 /* Colors.swift in Sources */,
 				B14DA43F1DD573E00057AE2E /* Calendar.xcdatamodeld in Sources */,
-				B12A99401DDC0CD9001486AF /* WeekLoopCell.swift in Sources */,
-				B12A993E1DDC09CD001486AF /* WeekView.swift in Sources */,
 				B14DA4371DD573E00057AE2E /* AppDelegate.swift in Sources */,
-				9CB573EF1DDC82DD00D23D6A /* DayViewLoop.swift in Sources */,
 				B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */,
 				B1EAF0F41DDB03CB00E60517 /* Layouter.swift in Sources */,
 			);
