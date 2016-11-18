@@ -127,8 +127,8 @@
 				B14DA4681DD573FE0057AE2E /* AppDelegate */,
 				B14DA4671DD573E80057AE2E /* App Infos */,
 				B1EAF0F21DDB039A00E60517 /* MyronCode */,
-				B1F7ED001DDE9E05006FE2C5 /* Day */,
 				B1F7ED061DDE9E05006FE2C5 /* Models */,
+				B1F7ED001DDE9E05006FE2C5 /* Day */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";

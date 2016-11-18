@@ -10,7 +10,6 @@ import UIKit
 
 class DayController: UIViewController {
     
-    
     // MARK: - Loop week view
     
     @IBOutlet weak var weekView: WeekView!
@@ -55,7 +54,6 @@ class DayController: UIViewController {
 // MARK: - Back View
 
 extension DayController {
-    
     
     func updateColor(inTime time: Date = Date()) {
         switch CalendarInfo(date: time).hour {

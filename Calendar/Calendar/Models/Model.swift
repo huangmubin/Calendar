@@ -8,6 +8,22 @@
 
 import UIKit
 
+// MARK: - Test
+
+func log(file: String = #file, function: String = #function, pre: String, date: Date) {
+    let format = DateFormatter()
+    format.dateFormat = "yyyy-MM-dd HH:mm:ss EEEE"
+    print("\(file) _ \(function): \(pre) -> \(format.string(from: date))")
+}
+
+func logPo(date: Date) -> String {
+    let format = DateFormatter()
+    format.dateFormat = "yyyy-MM-dd HH:mm:ss EEEE"
+    return format.string(from: date)
+}
+
+// MARK: - Model
+
 class Model {
     
     // MARK: Default
@@ -20,8 +36,11 @@ class Model {
     /// 显示日期偏移量
     var offset: TimeInterval = 0
     
+    /// 时区
+    var timezone: TimeInterval = 0
+    
     var origin: Date {
-        return _origin.addingTimeInterval(offset)
+        return _origin.addingTimeInterval(offset + timezone)
     }
     var calendar: CalendarInfo {
         return CalendarInfo(date: origin)
@@ -33,7 +52,9 @@ class Model {
     // MARK: - Init
     
     init() {
-        _origin = Date()
+        let time = Date().timeIntervalSince1970
+        _origin = Date(timeIntervalSince1970: time - Double(Int(time) % 86400))
+        timezone = TimeInterval(TimeZone.current.secondsFromGMT(for: Date()))
     }
     
     // MARK: - Methods

@@ -10,17 +10,16 @@ import UIKit
 
 class WeekLoopCell: LoopCollectionViewCell {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backView.backgroundColor = UIColor.clear
-        backView.layer.cornerRadius = 20
-    }
-    
     // MARK: Property
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var chineseDayLabel: UILabel!
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var backView: UIView! {
+        didSet {
+            backView.backgroundColor = UIColor.clear
+            backView.layer.cornerRadius = 20
+        }
+    }
     
     // MARK: - Update Views
     
@@ -28,52 +27,59 @@ class WeekLoopCell: LoopCollectionViewCell {
     var today  = false
     var select = false
     
-    func update() {
-        switch (select, light, today) {
-        case (true, _, true):   // 选中，并且是今天
-            backView.layer.backgroundColor = Colors.red.cgColor
-            
-            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
-            
-            dayLabel.textColor = Colors.white
-            chineseDayLabel.textColor = Colors.white
-        case (true, _, false):  // 选中，但不是今天
-            backView.layer.backgroundColor = Colors.white.cgColor
-            
-            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
-            
-            dayLabel.textColor = Colors.black
-            chineseDayLabel.textColor = Colors.black
-        case (_, _, true):      // 没选中，并且是今天
+    func update(display: Bool = false) {
+        if display {
+            switch (select, light, today) {
+            case (true, _, true):   // 选中，并且是今天
+                backView.layer.backgroundColor = Colors.red.cgColor
+                
+                dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
+                chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+                
+                dayLabel.textColor = Colors.white
+                chineseDayLabel.textColor = Colors.white
+            case (true, _, false):  // 选中，但不是今天
+                backView.layer.backgroundColor = Colors.white.cgColor
+                
+                dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
+                chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightBold)
+                
+                dayLabel.textColor = Colors.black
+                chineseDayLabel.textColor = Colors.black
+            case (_, _, true):      // 没选中，并且是今天
+                backView.layer.backgroundColor = UIColor.clear.cgColor
+                
+                dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
+                chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+                
+                dayLabel.textColor = UIColor.red
+                chineseDayLabel.textColor = UIColor.red
+            default:                // 没选中，不是今天
+                backView.layer.backgroundColor = UIColor.clear.cgColor
+                
+                dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
+                chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+                
+                dayLabel.textColor = Colors.white
+                chineseDayLabel.textColor = Colors.white
+            }
+        } else {
             backView.layer.backgroundColor = UIColor.clear.cgColor
+            
+            if today {
+                dayLabel.textColor = UIColor.red
+                chineseDayLabel.textColor = UIColor.red
+            } else {
+                dayLabel.textColor = Colors.white
+                chineseDayLabel.textColor = Colors.white
+            }
             
             dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
             chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
-            
-            dayLabel.textColor = UIColor.red
-            chineseDayLabel.textColor = UIColor.red
-//        case (_, true, _):      // 没选中，而且不是今天，但是是周末
-//            backView.layer.backgroundColor = UIColor.clear.cgColor
-//            
-//            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-//            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
-//            
-//            dayLabel.textColor = UIColor.lightGray
-//            chineseDayLabel.textColor = UIColor.lightGray
-        default:                // 没选中，不是今天
-            backView.layer.backgroundColor = UIColor.clear.cgColor
-            
-            dayLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightLight)
-            chineseDayLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
-            
-            dayLabel.textColor = Colors.white
-            chineseDayLabel.textColor = Colors.white
         }
     }
     
-    // MARK: - Interface 
+    // MARK: - Interface
     
     func update(date: Date) {
         let calendar = CalendarInfo(date: date)
