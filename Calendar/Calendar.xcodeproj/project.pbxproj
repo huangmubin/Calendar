@@ -16,6 +16,9 @@
 		B14DA4441DD573E00057AE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14DA4421DD573E00057AE2E /* LaunchScreen.storyboard */; };
 		B14DA44F1DD573E00057AE2E /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA44E1DD573E00057AE2E /* CalendarTests.swift */; };
 		B14DA45A1DD573E00057AE2E /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DA4591DD573E00057AE2E /* CalendarUITests.swift */; };
+		B15E73C21DDFE78700061624 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15E73C11DDFE78700061624 /* WeatherView.swift */; };
+		B15E73C41DDFEA5300061624 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15E73C31DDFEA5300061624 /* Tools.swift */; };
+		B15E73C61DDFED9500061624 /* NightSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15E73C51DDFED9500061624 /* NightSky.swift */; };
 		B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */; };
 		B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19124BE1DD5B80100D04049 /* CalendarInfos.swift */; };
 		B1EAF0F41DDB03CB00E60517 /* Layouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0F31DDB03CB00E60517 /* Layouter.swift */; };
@@ -62,6 +65,9 @@
 		B14DA4551DD573E00057AE2E /* CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14DA4591DD573E00057AE2E /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		B14DA45B1DD573E00057AE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B15E73C11DDFE78700061624 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		B15E73C31DDFEA5300061624 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tools.swift; path = ../../../TechniqueTree/Codes/Library/Tools.swift; sourceTree = "<group>"; };
+		B15E73C51DDFED9500061624 /* NightSky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightSky.swift; sourceTree = "<group>"; };
 		B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopCollectionView.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/LoopCollectionView.swift; sourceTree = "<group>"; };
 		B19124BE1DD5B80100D04049 /* CalendarInfos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarInfos.swift; path = ../../../TechniqueTree/Codes/Library/CalendarInfos.swift; sourceTree = "<group>"; };
 		B1EAF0F31DDB03CB00E60517 /* Layouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layouter.swift; path = ../../../TechniqueTree/Codes/Library/Layouter.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 		B1EAF0F21DDB039A00E60517 /* MyronCode */ = {
 			isa = PBXGroup;
 			children = (
+				B15E73C31DDFEA5300061624 /* Tools.swift */,
 				B1EAF0F31DDB03CB00E60517 /* Layouter.swift */,
 				B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */,
 				B19124BE1DD5B80100D04049 /* CalendarInfos.swift */,
@@ -190,6 +197,8 @@
 				B1F7ED021DDE9E05006FE2C5 /* DayView.swift */,
 				B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */,
 				B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */,
+				B15E73C51DDFED9500061624 /* NightSky.swift */,
+				B15E73C11DDFE78700061624 /* WeatherView.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -348,7 +357,10 @@
 				B12A993C1DDC088A001486AF /* UIKitExtensions.swift in Sources */,
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
 				B1F7ED0B1DDE9E05006FE2C5 /* DayView.swift in Sources */,
+				B15E73C21DDFE78700061624 /* WeatherView.swift in Sources */,
+				B15E73C41DDFEA5300061624 /* Tools.swift in Sources */,
 				B1F7ED0C1DDE9E05006FE2C5 /* DayViewLoop.swift in Sources */,
+				B15E73C61DDFED9500061624 /* NightSky.swift in Sources */,
 				B1F7ED101DDE9E05006FE2C5 /* Images.swift in Sources */,
 				B1F7ED0D1DDE9E05006FE2C5 /* WeekLoopCell.swift in Sources */,
 				B1F7ED0F1DDE9E05006FE2C5 /* Colors.swift in Sources */,

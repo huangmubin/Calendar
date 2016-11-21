@@ -34,28 +34,30 @@ class DayViewLoop: UIView {
             timerLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
             format.dateFormat = "HH : mm"
             timerLabel.text = self.format.string(from: Date())
+            
+            self.timer.scheduleRepeating(wallDeadline: DispatchWallTime.now(), interval: DispatchTimeInterval.seconds(60))
+            self.timer.setEventHandler(handler: {
+                self.timerLabel.text = self.format.string(from: Date())
+            })
         }
     }
-    private var timer: DispatchSourceTimer!
+    private var timer: DispatchSourceTimer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags.init(rawValue: 1), queue: DispatchQueue.main)
     private var format = DateFormatter()
+    private var timerIsResume = false
     
     func timer(start: Bool) {
-        if start {
-            timerLabel.text = self.format.string(from: Date())
-            DispatchQueue.global().async {
-                let date = 60 - CalendarInfo().second
-                Thread.sleep(forTimeInterval: TimeInterval(date))
-                self.timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags.init(rawValue: 1), queue: DispatchQueue.main)
-                self.timer?.scheduleRepeating(wallDeadline: DispatchWallTime.now(), interval: DispatchTimeInterval.seconds(60))
-                self.timer?.setEventHandler(handler: {
-                    DispatchQueue.main.async {
-                        self.timerLabel.text = self.format.string(from: Date())
-                    }
-                })
-                self.timer?.resume()
+        timerLabel.text = self.format.string(from: Date())
+        if start && !timerIsResume {
+            timerIsResume = true
+            let after = DispatchTime.now() + DispatchTimeInterval.seconds(CalendarInfo().second)
+            DispatchQueue.global().asyncAfter(deadline: after) {
+                if self.timerIsResume {
+                    self.timer.resume()
+                }
             }
-        } else {
-            timer?.suspend()
+        } else if !start && timerIsResume {
+            self.timer.suspend()
+            self.timerIsResume = false
         }
     }
     
