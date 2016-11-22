@@ -21,6 +21,7 @@
 		B15E73C61DDFED9500061624 /* NightSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15E73C51DDFED9500061624 /* NightSky.swift */; };
 		B18CADD61DD986CF009DFF74 /* LoopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */; };
 		B19124BF1DD5B80100D04049 /* CalendarInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19124BE1DD5B80100D04049 /* CalendarInfos.swift */; };
+		B192BB001DE420A000D7E8CA /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192BAFF1DE420A000D7E8CA /* ClockInView.swift */; };
 		B1EAF0F41DDB03CB00E60517 /* Layouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAF0F31DDB03CB00E60517 /* Layouter.swift */; };
 		B1F7ED0A1DDE9E05006FE2C5 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED011DDE9E05006FE2C5 /* DayController.swift */; };
 		B1F7ED0B1DDE9E05006FE2C5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7ED021DDE9E05006FE2C5 /* DayView.swift */; };
@@ -70,6 +71,7 @@
 		B15E73C51DDFED9500061624 /* NightSky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightSky.swift; sourceTree = "<group>"; };
 		B18CADD51DD986CF009DFF74 /* LoopCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopCollectionView.swift; path = ../../../TechniqueTree/Codes/Library/UIKit/LoopCollectionView.swift; sourceTree = "<group>"; };
 		B19124BE1DD5B80100D04049 /* CalendarInfos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarInfos.swift; path = ../../../TechniqueTree/Codes/Library/CalendarInfos.swift; sourceTree = "<group>"; };
+		B192BAFF1DE420A000D7E8CA /* ClockInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
 		B1EAF0F31DDB03CB00E60517 /* Layouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Layouter.swift; path = ../../../TechniqueTree/Codes/Library/Layouter.swift; sourceTree = "<group>"; };
 		B1F7ED011DDE9E05006FE2C5 /* DayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		B1F7ED021DDE9E05006FE2C5 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				B1EAF0F21DDB039A00E60517 /* MyronCode */,
 				B1F7ED061DDE9E05006FE2C5 /* Models */,
 				B1F7ED001DDE9E05006FE2C5 /* Day */,
+				B192BAFE1DE4206000D7E8CA /* ClockIn */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -177,6 +180,14 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
+		B192BAFE1DE4206000D7E8CA /* ClockIn */ = {
+			isa = PBXGroup;
+			children = (
+				B192BAFF1DE420A000D7E8CA /* ClockInView.swift */,
+			);
+			path = ClockIn;
+			sourceTree = "<group>";
+		};
 		B1EAF0F21DDB039A00E60517 /* MyronCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,8 +208,8 @@
 				B1F7ED021DDE9E05006FE2C5 /* DayView.swift */,
 				B1F7ED051DDE9E05006FE2C5 /* WeekView.swift */,
 				B1F7ED041DDE9E05006FE2C5 /* WeekLoopCell.swift */,
-				B15E73C51DDFED9500061624 /* NightSky.swift */,
 				B15E73C11DDFE78700061624 /* WeatherView.swift */,
+				B15E73C51DDFED9500061624 /* NightSky.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 				B14DA4391DD573E00057AE2E /* ViewController.swift in Sources */,
 				B1F7ED0B1DDE9E05006FE2C5 /* DayView.swift in Sources */,
 				B15E73C21DDFE78700061624 /* WeatherView.swift in Sources */,
+				B192BB001DE420A000D7E8CA /* ClockInView.swift in Sources */,
 				B15E73C41DDFEA5300061624 /* Tools.swift in Sources */,
 				B1F7ED0C1DDE9E05006FE2C5 /* DayViewLoop.swift in Sources */,
 				B15E73C61DDFED9500061624 /* NightSky.swift in Sources */,

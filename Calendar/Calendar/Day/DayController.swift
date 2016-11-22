@@ -10,9 +10,9 @@ import UIKit
 
 class DayController: UIViewController {
     
-    // MARK: - Night Sky
+    // MARK: - Illustration
     
-    @IBOutlet weak var nightSky: NightSky!
+    @IBOutlet weak var illustration: UIImageView!
     
     // MARK: - Loop week view
     
@@ -37,7 +37,6 @@ class DayController: UIViewController {
         updateColor()
         NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: .main) { _ in
             self.updateColor()
-            self.nightSky.update()
             self.dayViews.timer(start: true)
         }
         NotificationCenter.default.addObserver(forName: .UIApplicationWillResignActive, object: nil, queue: .main) { _ in
@@ -47,12 +46,10 @@ class DayController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //dayViews.timer(start: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        //dayViews.timer(start: false)
     }
              
 }
@@ -65,10 +62,13 @@ extension DayController {
         switch CalendarInfo(date: time).hour {
         case 0 ..< 5, 19 ..< 25:
             view.backgroundColor = Colors.night
+            self.illustration.image = UIImage(named: "Night")
         case 5 ..< 7, 17 ..< 19:
             view.backgroundColor = Colors.dusk
+            self.illustration.image = UIImage(named: "Day")
         default:
             view.backgroundColor = Colors.day
+            self.illustration.image = UIImage(named: "Day")
         }
     }
     

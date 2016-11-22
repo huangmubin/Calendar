@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        Habit(entity: <#T##NSEntityDescription#>, insertInto: <#T##NSManagedObjectContext?#>)
         collectionView.initDeploy(delegate: self)
         //collectionView.scrollToItem(at: IndexPath(row: 0, section: 5000), at: UICollectionViewScrollPosition.top, animated: false)
     }
