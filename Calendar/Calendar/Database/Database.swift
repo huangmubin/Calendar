@@ -37,17 +37,25 @@ class Database {
     
     class func insert(habit name: String) {
         queue.sync {
+            if var objects = UserDefaults.standard.array(forKey: "Habits") as? [String] {
+                objects.append(name)
+                UserDefaults.standard.set(objects, forKey: "Habits")
+            } else {
+                UserDefaults.standard.set([name], forKey: "Habits")
+            }
+            /*
             let object = NSEntityDescription.insertNewObject(forEntityName: "Habit", into: persistent.viewContext) as! Habit
             object.createTime = Date().timeIntervalSince1970
             object.name = name
             self.save()
+            */
         }
     }
     
-    class func insert(clockIn name: String) {
+    class func insert(clockIn name: String, time: Double = Date().timeIntervalSince1970) {
         queue.sync {
             let object = NSEntityDescription.insertNewObject(forEntityName: "ClockIn", into: persistent.viewContext) as! ClockIn
-            object.time = Date().timeIntervalSince1970
+            object.time = time
             object.habit = name
             self.save()
         }
@@ -58,13 +66,20 @@ class Database {
     class func remove(habit name: String) {
         queue.sync {
             let _ = {
+                if var objects = UserDefaults.standard.array(forKey: "Habits") as? [String] {
+                    if let index = objects.index(of: name) {
+                        objects.remove(at: index)
+                        UserDefaults.standard.set(objects, forKey: "Habits")
+                    }
+                }
+                /*
                 let request = NSFetchRequest<Habit>(entityName: "Habit")
                 request.predicate = NSPredicate(format: "name == '\(name)'")
                 if let objects = try? persistent.viewContext.fetch(request) {
                     for object in objects {
                         persistent.viewContext.delete(object)
                     }
-                }
+                }*/
             }()
             let _ = {
                 let request = NSFetchRequest<ClockIn>(entityName: "ClockIn")
@@ -79,10 +94,27 @@ class Database {
         }
     }
     
+    class func remove(clockIn name: String, start: Double, end: Double) {
+        queue.sync {
+            let _ = {
+                let request = NSFetchRequest<ClockIn>(entityName: "ClockIn")
+                request.predicate = NSPredicate(format: "(habit == '\(name)') AND (time >= \(start)) AND (time < \(end))")
+                if let objects = try? persistent.viewContext.fetch(request) {
+                    for object in objects {
+                        persistent.viewContext.delete(object)
+                    }
+                }
+            }()
+            save()
+        }
+    }
+    
     // MARK: - Fetch
     
     class func fetchHabits() -> [String] {
         return queue.sync {
+            return (UserDefaults.standard.array(forKey: "Habits") as? [String]) ?? []
+            /*
             let request = NSFetchRequest<Habit>(entityName: "Habit")
             request.predicate = NSPredicate(format: "name != ' '")
             request.sortDescriptors = [NSSortDescriptor(key: "createTime", ascending: true)]
@@ -93,6 +125,7 @@ class Database {
                 }
             }
             return habits
+            */
         }
     }
     
@@ -111,5 +144,31 @@ class Database {
             return clockIns
         }
     }
+    
+    // MARK: - Move
+    
+    class func moveHabit(name: String, to: Int) {
+        queue.sync {
+            if var objects = UserDefaults.standard.array(forKey: "Habits") as? [String] {
+                if let index = objects.index(of: name) {
+                    let habit = objects.remove(at: index)
+                    objects.insert(habit, at: to)
+                    UserDefaults.standard.set(objects, forKey: "Habits")
+                }
+            }
+        }
+    }
+    
+    class func movehabit(index: Int, to: Int) {
+        queue.sync {
+            if var objects = UserDefaults.standard.array(forKey: "Habits") as? [String] {
+                let habit = objects.remove(at: index)
+                objects.insert(habit, at: to)
+                UserDefaults.standard.set(objects, forKey: "Habits")
+            }
+        }
+    }
+    
+    
     
 }

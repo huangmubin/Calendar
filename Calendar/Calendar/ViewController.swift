@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ClockIn
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.initDeploy(delegate: self)
         //collectionView.scrollToItem(at: IndexPath(row: 0, section: 5000), at: UICollectionViewScrollPosition.top, animated: false)

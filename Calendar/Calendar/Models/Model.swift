@@ -62,4 +62,22 @@ class Model {
         offset = date.timeIntervalSince1970 - _origin.timeIntervalSince1970
     }
     
+    
+    func rangeInDay() -> (start: Double, end: Double) {
+        let start = calendar.firstTimeInDay()?.timeIntervalSince1970 ?? 0
+        return (start, start + 86400)
+    }
+}
+
+// MARK: - Clock In Model
+
+class ClockInModel: ClockInViewDateModel {
+    
+    var habit: String
+    var clockIn: Bool = false
+    
+    init(habit: String) {
+        self.habit = habit
+    }
+    
 }
