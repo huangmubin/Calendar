@@ -194,11 +194,19 @@ extension DayController: ClockInViewDelegate {
         } else if Database.fetchClockIn(habit: habit, start: range.start, end: range.end).count <= 0 {
             Database.remove(clockIn: habit, start: range.start, end: range.end)
         }
+        
+        self.clockInDates[at].clockIn = clockIn
     }
     
     func clockInView(view: ClockInView, insert habit: String) -> Bool {
         Database.insert(habit: habit)
         self.clockInDates.append(ClockInModel(habit: habit))
+        return true
+    }
+    
+    func clockInView(view: ClockInView, delete habit: String, at: Int) -> Bool {
+        Database.remove(habit: habit)
+        self.clockInDates.remove(at: at)
         return true
     }
     

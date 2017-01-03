@@ -19,6 +19,7 @@ protocol ClockInViewDelegate: NSObjectProtocol {
     var clockInDates: [ClockInViewDateModel] { get set }
     func clockInView(view: ClockInView, clockIn: Bool, habit: String, at: Int)
     func clockInView(view: ClockInView, insert habit: String) -> Bool
+    func clockInView(view: ClockInView, delete habit: String, at: Int) -> Bool
 }
 
 // MARK: - Clock In View
@@ -73,6 +74,16 @@ extension ClockInView: UITableViewDataSource, UITableViewDelegate {
             cell.accessoryType = (cell.accessoryType == .none ? .checkmark : .none)
             if let data = delegate?.clockInDates[indexPath.row] {
                 delegate?.clockInView(view: self, clockIn: cell.accessoryType == .checkmark, habit: data.habit, at: indexPath.row)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            if let data = delegate?.clockInDates[indexPath.row] {
+                if delegate?.clockInView(view: self, delete: data.habit, at: indexPath.row) == true {
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
             }
         }
     }
